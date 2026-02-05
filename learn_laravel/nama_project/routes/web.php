@@ -20,9 +20,7 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/lists', function () {
-    return Inertia::render('Lists/Index');
-})->middleware(['auth', 'verified'])->name('lists');
+
 
 Route::middleware('auth')->group(function () {
     Route::resource('lists', ListController::class);

@@ -1,5 +1,4 @@
 import React from "react";
-import { Inertia } from "@inertiajs/inertia";
 
 export default function Dashboard({ lists }) {
     // Kalau lists belum dikirim dari backend, pakai dummy
