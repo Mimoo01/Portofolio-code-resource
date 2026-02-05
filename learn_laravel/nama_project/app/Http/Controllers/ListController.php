@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use App\Models\TaskList;
 
 class ListController extends Controller
 {
@@ -12,7 +14,14 @@ class ListController extends Controller
      */
     public function index()
     {
-        //
+        $lists = TaskList::where('user_id', auth()->id())->with('tasks')->get();
+        return Inertia::render('Lists/Index', [
+            'lists' => $lists,
+            'flash' => [
+                'success' => session('success'),
+                'error' => session('error'),
+            ],
+        ]);
     }
 
     /**
