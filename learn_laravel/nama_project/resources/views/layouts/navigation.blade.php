@@ -15,6 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('lists.index')" :active="request()->routeIs('lists.*')">
+                            {{ __('Lists') }}
+                        </x-nav-link>
                 </div>
             </div>
 
@@ -35,7 +40,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Profile ku') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -70,6 +75,8 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('lists.index')" :active="request()->routeIs('lists.*')">
+                {{ __('Lists') }}
         </div>
 
         <!-- Responsive Settings Options -->

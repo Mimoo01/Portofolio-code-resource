@@ -37,7 +37,16 @@ class ListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+        TaskList::create([
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+            'user_id' => auth()->id(),
+        ]);
+        return redirect()->route('lists.index')->with('success', 'List created successfully.');
     }
 
     /**
@@ -59,16 +68,22 @@ class ListController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id,Tasklist $list)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+        $list->update($validated);
+        return redirect()->route('lists.index')->with('success', 'List created successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy(Tasklist $list)
+    { 
+        $list->delete();
+        return redirect()->route('lists.index')->with('success', 'List deleted successfully.');
     }
 }
