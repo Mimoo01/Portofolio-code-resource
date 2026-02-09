@@ -24,12 +24,13 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Title */
-.title {
+.title,
+.crlist {
     margin-bottom: 20px;
     text-align: center;
+    display: block;
+    margin: 0 auto;
 }
-
 /* Alerts */
 .alert {
     padding: 10px 14px;
