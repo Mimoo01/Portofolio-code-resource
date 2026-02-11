@@ -77,12 +77,13 @@
 }
 
 /* Task item */
-.task-item {
+.task-item,
+.list-card {
     padding: 8px 10px;
     border-radius: 6px;
     background: #ffffff;
-    margin-bottom: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 2);
     font-size: 14px;
 }
 

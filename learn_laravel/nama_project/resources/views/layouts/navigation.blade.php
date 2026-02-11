@@ -77,6 +77,8 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('lists.index')" :active="request()->routeIs('lists.*')">
                 {{ __('Lists') }}
+            </x-responsive-nav-link>
+
         </div>
 
         <!-- Responsive Settings Options -->
