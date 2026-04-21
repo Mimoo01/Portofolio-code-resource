@@ -100,7 +100,10 @@ export default function Index() {
                                     <div className="actions">
                                         <button
                                             className="button1"
-                                            onClick={() => openEditModal(list)}
+                                            onClick={() => {
+                                                console.log(list);
+                                                openEditModal(list);
+                                            }}
                                         >
                                             Edit
                                         </button>

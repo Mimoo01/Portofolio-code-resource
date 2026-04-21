@@ -1,0 +1,60 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.quote-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+h1 {
+  font-size: 2em;
+  color: #3333;
+  margin-bottom: 20px;
+}
+
+.quote-box {
+  padding: 20px;
+  margin: 20px;
+  background-color: #24a8dc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* styling for the quote tex */
+#quote {
+  font-size: 1.5em;
+  color: aquamarine;
+  margin-bottom: 10px;
+}
+
+#author {
+  font-size: 1.2em;
+  color: #555;
+}
+
+button {
+  background-color: #24a8dc;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
