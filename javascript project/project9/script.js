@@ -1,4 +1,4 @@
-let playlist = JSON.parse(localStorage.getItem("playlist"));
+let playlist = JSON.parse(localStorage.getItem("playlist")) || [];
 // ambil element id
 const audio = document.getElementById("audio");
 const playPauseButton = document.getElementById("play-pause");
@@ -62,4 +62,30 @@ audioUpload.addEventListener("change", (event) => {
     };
     reader.readAsDataUrl(file);
   });
+});
+
+playPauseButton.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.paused();
+  }
+  updatePlayPauseIcon();
+});
+
+// udpate prpgres bar
+
+audio.addEventListener("timeupdate", () => {
+  const progress = (audio.currentTime / audio.duration) * 100;
+  progressBar.style.width = progress + "%";
+});
+
+// reset keika audio nya berakhir
+
+audio.addEventListener("ended", () => {
+  updatePlayPauseIcon();
+  progressBar.style.width = "0";
+  audio.pause();
+  playIcon.style.display = "block";
+  pauseIcon.style.display = "none";
 });
