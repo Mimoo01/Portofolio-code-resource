@@ -1,0 +1,69 @@
+USE MarketManagement
+
+CREATE TABLE Products(
+Category char(3),
+Name varchar(50),
+Description varchar(200)
+)
+
+USE MarketManagement
+
+CREATE TABLE [dbo].[Products] (
+    ProductId INT PRIMARY KEY,
+
+    [Category] CHAR(6) NOT NULL,
+
+    [Name] VARCHAR(50) UNIQUE NOT NULL,
+
+    [Description] VARCHAR(200),
+
+    [Weight] FLOAT CHECK (Weight >= 0),
+
+    [Price] DECIMAL(18,2),
+
+    LaunchDate DATE
+);
+
+
+alter table Products add extra_column int null
+
+alter table Products drop column extra_column
+
+
+a.add quantity column to the product table
+
+ALTER TABLE Products
+ADD Quantity INT CHECK(quantity >=0)
+
+
+b.remove column Category
+
+ALTER TABLE Products
+DROP COLUMN Category
+
+
+c.Create table Categories
+
+CREATE TABLE Categories(
+CategoryId INT IDENTITY(1,1) PRIMARY KEY,
+Name varchar(500) UNIQUE NOT NULL,
+
+)
+
+
+D.add an Order table
+
+CREATE TABLE Orders(
+OrderId INT IDENTITY(1,1) PRIMARY KEY,
+OrderDate datetime NOT NULL,
+CustomerEmail varchar(500) NOT NULL
+)
+
+
+
+add foreign key nya
+
+ALTER TABLE Products
+ADD CONSTRAINT FK_Product_Category
+FOREIGN KEY (CategoryId) REFERENCES Categories(CategoryId)
+
